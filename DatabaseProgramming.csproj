@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazor.Bootstrap" Version="2.1.0" />
+    <PackageReference Include="CurrieTechnologies.Razor.SweetAlert2" Version="5.5.0" />
     <PackageReference Include="Npgsql" Version="8.0.1" />
   </ItemGroup>
 

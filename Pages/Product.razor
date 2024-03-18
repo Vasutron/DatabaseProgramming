@@ -1,4 +1,5 @@
 ﻿@page "/product"
+@inject SweetAlertService Swal
 
 <h3>Product! _UpgitTest</h3>
 
@@ -149,6 +150,14 @@
             {
                 FetchData();
                 await CloseForm();
+
+                await Swal.FireAsync(new SweetAlertOptions
+                {
+                    Title = "บันทึกข้อมูล",
+                    Text = "บันทึกข้อมูลเรียบร้อยแล้ว",
+                    Icon = SweetAlertIcon.Success,
+                    Timer = 2000
+                });
             }
         }
         catch (Exception ex)
@@ -162,23 +171,36 @@
         productModel = item;
     }
 
-    void Remove(ProductModel item)
+    async Task Remove(ProductModel item)
     {
-        try
-        {
-            using Npgsql.NpgsqlConnection conn = new MyConnect().GetConnection();
-            using Npgsql.NpgsqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "DELETE FROM tb_product WHERE id = @id";
-            cmd.Parameters.AddWithValue("id", item.Id);
-
-            if (cmd.ExecuteNonQuery() != 0)
+        SweetAlertResult respond = await Swal.FireAsync(new SweetAlertOptions
             {
-                FetchData(); // Refresh data เพื่อแสดงข้อมูลล่าสุด
+                Title = "ลบข้อมูล",
+                Text = "คุณต้องการลบข้อมูลนี้ใช่หรือไม่?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true,
+                ShowConfirmButton = true
             }
-        }
-        catch (Exception ex)
+        );
+
+        if (respond.IsConfirmed)
         {
-            Console.WriteLine("void Remove : " + ex.Message);
+            try
+            {
+                using Npgsql.NpgsqlConnection conn = new MyConnect().GetConnection();
+                using Npgsql.NpgsqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_product WHERE id = @id";
+                cmd.Parameters.AddWithValue("id", item.Id);
+
+                if (cmd.ExecuteNonQuery() != 0)
+                {
+                    FetchData(); // Refresh data เพื่อแสดงข้อมูลล่าสุด
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("void Remove : " + ex.Message);
+            }
         }
     }
 }
