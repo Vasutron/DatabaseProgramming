@@ -9,6 +9,7 @@
       "DatabaseProgramming/1.0.0": {
         "dependencies": {
           "Blazor.Bootstrap": "2.1.0",
+          "CurrieTechnologies.Razor.SweetAlert2": "5.5.0",
           "Npgsql": "8.0.1"
         },
         "runtime": {
@@ -23,6 +24,18 @@
           "lib/net6.0/BlazorBootstrap.dll": {
             "assemblyVersion": "2.1.0.0",
             "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "CurrieTechnologies.Razor.SweetAlert2/5.5.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.26",
+          "Microsoft.AspNetCore.Components.Web": "6.0.26"
+        },
+        "runtime": {
+          "lib/net6.0/CurrieTechnologies.Razor.SweetAlert2.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -215,6 +228,13 @@
       "sha512": "sha512-+pA/NNPjyRmpzVYtIE+DuONMciyiSGxzj0s1vojKTpr8E7/96IE82ptUBFK4Sqi8nuagrxtYADOCjgsT5ZTz9A==",
       "path": "blazor.bootstrap/2.1.0",
       "hashPath": "blazor.bootstrap.2.1.0.nupkg.sha512"
+    },
+    "CurrieTechnologies.Razor.SweetAlert2/5.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mpo8yNWeUcFesm/d0vA2X/4TloKbXUszWo3u4OtDQvo9cj+zYVOIuB/ZKBL+alIMp1FViImU9BjJocwkIRXVWg==",
+      "path": "currietechnologies.razor.sweetalert2/5.5.0",
+      "hashPath": "currietechnologies.razor.sweetalert2.5.5.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/6.0.26": {
       "type": "package",

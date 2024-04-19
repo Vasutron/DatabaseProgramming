@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
+            "CurrieTechnologies.Razor.SweetAlert2": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[8.0.1, )"

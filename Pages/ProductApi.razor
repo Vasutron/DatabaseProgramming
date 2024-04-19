@@ -1,13 +1,21 @@
-﻿@page "/product"
+﻿@page "/productApi"
 @inject SweetAlertService Swal
 
-<h3>Product! _UpgitTest</h3>
+<h3>Product! _(WithRestAPI)</h3>
 
-<button @onclick="OpenForm" class="btn btn-primary">
+<button @onclick="OpenMadal" class="btn btn-primary">
     <i class="fas fa-plus me-2"></i>
-    New Record
+    Add New Product
 </button>
 
+<div class="mt-3" style="width: 5%;">
+    <label for="pageSize">ShowList:</label>
+    <select @bind="pageSize" id="pageSize" class="form-select form-select-sm">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="@list.Count()">All</option>
+    </select>
+</div>
 <table class="mt-3 table table-bordered table-striped">
     <thead>
         <tr class="bg-primary text-white text-center">
@@ -20,7 +28,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (ProductModel item in products)
+        @foreach (ProductModel item in PaginatedList)
         {
             <tr>
                 <td>@item.Id</td>
@@ -34,7 +42,7 @@
                     </button>
                 </td>
                 <td class="text-center">
-                    <button @onclick="e => Remove(item)" class="btn btn-sm btn-danger">
+                    <button @onclick="e => Remove(item.Id)" class="btn btn-sm btn-danger">
                         <i class="fas fa-trash"></i>
                         Delete
                     </button>
@@ -48,25 +56,50 @@
     <BodyTemplate>
         <div class="mb-3">
             <div>Barcode</div>
-            <input @bind="productModel.Barcode" class="form-control" />
+            <input @bind="Barcode" class="form-control" />
         </div>
         <div class="mb-3">
             <div>Name</div>
-            <input @bind="productModel.Name" class="form-control" />
+            <input @bind="Name" class="form-control" />
         </div>
         <div class="mb-3">
             <div>Price</div>
-            <input @bind="productModel.Price" class="form-control" />
+            <input @bind="Price" class="form-control" />
         </div>
-
     </BodyTemplate>
-    <FooterTemplate>
 
-        <button @onclick="Save" class="btn btn-primary">
+    <FooterTemplate>
+        <button @onclick="HandleSave" class="btn btn-primary">
             Save
         </button>
-        <button @onclick="CloseForm" class="btn btn-secondary">
+        <button @onclick="CloseModal" class="btn btn-secondary">
             Cancel
         </button>
     </FooterTemplate>
 </Modal>
+
+@code {
+    private int pageSize = 5;
+    private int currentPage = 1;
+
+    private List<ProductModel> PaginatedList
+    {
+        get
+        {
+            return list.Skip((this.currentPage - 1) * this.pageSize).Take(this.pageSize).ToList();
+        }
+    }
+
+    private int TotalPages
+    {
+        get
+        {
+            return (int)Math.Ceiling((double)list.Count / this.pageSize);
+        }
+    }
+
+    private void GoToPage(int page)
+    {
+        this.currentPage = page;
+    }
+}

@@ -1,0 +1,37 @@
+﻿@namespace Components
+
+
+<button class="btn btn-primary" @onclick="InternalEvent">
+    @* ถ้ามีค่าว่างให้แสดง @Text ถ้าไม่ ให้แสดง @ChildContent *@
+    @if (ChildContent == null)
+    {
+        @Text
+    }
+    else
+    {
+        @ChildContent
+    }
+
+</button>
+
+@if (showPanal)
+{
+    <div class="card bg-primary"> MyDiv</div>
+}
+
+@code {
+    public bool showPanal = false;
+    [Parameter]
+    public string? Text { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback MyClick { get; set; }
+
+    void InternalEvent()
+    {
+        Console.WriteLine("UserClickButtonWithCompoMyButton");
+    }
+}

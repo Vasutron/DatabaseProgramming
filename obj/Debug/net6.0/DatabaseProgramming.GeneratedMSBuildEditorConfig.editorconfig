@@ -22,6 +22,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Documents/VSL_private/Learn/sourceCode/BasicCS/BlazorDatabaseProgramming/DatabaseProgramming/Pages/Components/MyButton.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xNeUJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Documents/VSL_private/Learn/sourceCode/BasicCS/BlazorDatabaseProgramming/DatabaseProgramming/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/User/Documents/VSL_private/Learn/sourceCode/BasicCS/BlazorDatabaseProgramming/DatabaseProgramming/Pages/Product.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/VSL_private/Learn/sourceCode/BasicCS/BlazorDatabaseProgramming/DatabaseProgramming/Pages/ProductApi.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdEFwaS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Documents/VSL_private/Learn/sourceCode/BasicCS/BlazorDatabaseProgramming/DatabaseProgramming/Shared/SurveyPrompt.razor]

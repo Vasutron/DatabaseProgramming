@@ -47,3 +47,5 @@ C:\Users\User\Documents\VSL_private\Learn\sourceCode\BasicCS\BlazorDatabaseProgr
 C:\Users\User\Documents\VSL_private\Learn\sourceCode\BasicCS\BlazorDatabaseProgramming\DatabaseProgramming\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\User\Documents\VSL_private\Learn\sourceCode\BasicCS\BlazorDatabaseProgramming\DatabaseProgramming\bin\Debug\net6.0\Microsoft.JSInterop.dll
 C:\Users\User\Documents\VSL_private\Learn\sourceCode\BasicCS\BlazorDatabaseProgramming\DatabaseProgramming\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\User\Documents\VSL_private\Learn\sourceCode\BasicCS\BlazorDatabaseProgramming\DatabaseProgramming\obj\Debug\net6.0\DatabaseProgramming.sourcelink.json
+C:\Users\User\Documents\VSL_private\Learn\sourceCode\BasicCS\BlazorDatabaseProgramming\DatabaseProgramming\bin\Debug\net6.0\CurrieTechnologies.Razor.SweetAlert2.dll
