@@ -1,9 +1,54 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Welcome Profile</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Hi! Hello, world! Welcome...</h1>
 
-Welcome to your new app.
+<h3>Profile : @profile.Name @profile.LName</h3>
+
+<div>
+    <label><b>Name:</b></label>
+    <p>@profile.Name @profile.LName</p>
+
+    <label>
+        <b>
+            Email:
+        </b>
+    </label>
+    <p>@profile.Email</p>
+
+    <label>Age:</label>
+    <p>@profile.Age</p>
+</div>
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+    private ProfileModel profile;
+
+    protected override void OnInitialized()
+    {
+        profile = GetProfileData();
+    }
+
+    private ProfileModel GetProfileData()
+    {
+        var AgeB = DateTime.Now.Year - 1992;
+        return new ProfileModel
+        {
+            Name = "Vasutron",
+            LName = "Luanglum",
+            Email = "popart.vl@gmail.com",
+            Age = AgeB
+        };
+    }
+
+    public class ProfileModel
+    {
+        public string Name { get; set; }
+        public string LName { get; set; }
+        public string Email { get; set; }
+        public int Age { get; set; }
+        public DateTime DOB { get; set; } // date of birth
+    }
+}
